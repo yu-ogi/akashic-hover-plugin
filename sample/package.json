@@ -7,19 +7,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "npm run build",
-    "start": "akashic-sandbox .",
-    "build": "tsc -p . && akashic scan asset script"
+    "start": "akashic-cli-sandbox .",
+    "build": "tsc -p . && akashic-cli-scan asset script",
+    "export": "rimraf game && akashic-cli-export html -o game -b",
+    "deploy": "gh-pages -d game"
   },
   "author": "",
   "license": "",
   "dependencies": {
-    "@akashic-extension/akashic-hover-plugin": "~3.2.1"
+    "@akashic-extension/akashic-hover-plugin": ".."
   },
   "devDependencies": {
-    "@akashic/akashic-cli-scan": "~0.15.2",
-    "@akashic/akashic-engine": "~3.2.0",
-    "@akashic/akashic-sandbox": "~0.17.1",
-    "@types/node": "14.14.11",
-    "typescript": "~3.8.3"
+    "@akashic/akashic-cli-export": "^1.9.6",
+    "@akashic/akashic-cli-sandbox": "^1.1.3",
+    "@akashic/akashic-cli-scan": "^0.17.2",
+    "@akashic/akashic-engine": "^3.18.0",
+    "@types/node": "^14.14.11",
+    "gh-pages": "^6.1.1",
+    "rimraf": "^5.0.8",
+    "typescript": "^3.8.3"
   }
 }
