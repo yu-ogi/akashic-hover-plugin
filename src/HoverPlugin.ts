@@ -49,14 +49,14 @@ class HoverPlugin implements HoverPluginLike {
 	start(): boolean {
 		this.view.addEventListener("mousemove", this._onMouseMove_bound, false);
 		this.view.addEventListener("mouseout", this._onMouseOut_bound, false);
-		this.view.addEventListener("pointerleave", this._onMouseOut_bound, false);
+		this.view.addEventListener("pointerover", this._onMouseOut_bound, false);
 		return true;
 	}
 
 	stop(): void {
 		this.view.removeEventListener("mousemove", this._onMouseMove_bound, false);
 		this.view.removeEventListener("mouseout", this._onMouseOut_bound, false);
-		this.view.removeEventListener("pointerleave", this._onMouseOut_bound, false);
+		this.view.removeEventListener("pointerover", this._onMouseOut_bound, false);
 	}
 
 	// 現在ホバーしている座標を返す。ホバーしていない時は null を返す。
