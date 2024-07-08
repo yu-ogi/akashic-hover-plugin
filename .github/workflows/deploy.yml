@@ -1,4 +1,4 @@
-name: Deploy API Document on GitHub Pages
+name: Deploy on GitHub Pages
 
 on:
   workflow_dispatch:
@@ -24,4 +24,9 @@ jobs:
           npm ci
           npm run build
           npm run export
-          npm run deploy
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./sample/game
+          user_name: 'github-actions'
+          user_email: '41898282+github-actions[bot]@users.noreply.github.com'
